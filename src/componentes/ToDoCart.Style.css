@@ -1,14 +1,16 @@
-.ContainerToDo{
-    /* background-color: blueviolet; */
+ .ContainerToDo{
     background-image: linear-gradient(to right ,#65bef5,#E4E5E6);
-    /* display: flex;
-    flex-direction: column; */
     width: 80%;
     padding: 20px;
     justify-content: center;
     align-items: center;
     margin: 30px 0;
-
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+} 
+.datamain{
+    width: 100%;
+    /* background-color: black; */
 }
  .ToDoCarditem{
     display: flex;
@@ -16,14 +18,16 @@
     background-image: linear-gradient(to right ,#65bef5,#E4E5E6);
     margin: 15px 0;
     gap: 30px;
-    /* padding: 0px 15px; */
     justify-content: space-between;
     border-bottom: 1px Solid #909090;
 }
 
 .ToDoitem{
     display: flex;
-    /* background-color: coral; */
+    /* background-color: darkblue; */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
     gap: 30px;
     padding: 17px ;
     font-size: 1rem;
@@ -32,9 +36,9 @@
 
 .btmToDoitem {
     display: flex;
-    /* background-color: rgb(226, 43, 153); */
+  /* background-color: aqua; */
     width: 30%;
-    /* align-items: center; */
+ 
     justify-content: flex-end;
 
 
@@ -53,27 +57,50 @@
 .input-search{
     border: none;
     outline: none;
-    width: 100%;
-    height: 50px;
-    border-radius: 10px;
-    border: 1px solid #909090;
+    width: 95%;
+    height: 47px;
+  
 }
 
-@media screen and (max-width: 425px) {
-    .ToDoCarditem{
-        display: flex;
-        flex-direction: column;
-        background-color: #65bef5;
+
+.search{
+     position: relative;
+     background-color: #65bef5;
+     border-radius: 10px;
+     border: 1px solid #909090;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FFF;
+}
+
+.IconSearch > .fa-solid {
+
+    color: #909090;
+    font-size: 15px;
+}
+
+
+.ToDoCardTitel{
+    display: flex;
+    gap: 30px;
+}
+   
+@media screen and (max-width: 426px) {
+   .ToDoCarditem {
+    display: flex;
+    flex-direction: column;
+   }
+    .btmToDoitem{
+        width: 100%;
+        justify-content: space-around;
+        /* background-color: aqua; */
     }
 
-    .btnToDo{
-        border: none;
-        /* padding: 12px 30px; */
-        background-color: rgb(0,80,153);
-        color: white;
-        border-radius: 10px;
-        /* margin: 10px; */
-    
-    } 
-    
-}
+    /* .ToDoCardTitel{
+        flex-direction: column;
+    } */
+   .ToDoitem{
+    justify-content: space-around;
+   }
+} 

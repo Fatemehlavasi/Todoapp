@@ -29,18 +29,16 @@ const ToDoForm = ({ update, setUpdate ,FormStatus, setFormStatus }) => {
         <div className='containerForm'>
             <form onSubmit={handleSubmit} className='Form'>
                 <div className='inputForm'>
-                <input type="text" name='name' value={FormStatus.name} onChange={handleChange} placeholder='title...' />
-                <input type="text" name='lastName' value={FormStatus.lastName} onChange={handleChange}   placeholder='dicription...'/>
+                    <input type="text" name='name' value={FormStatus.name} onChange={handleChange} placeholder='title...' required />
+                    <input type="text" name='lastName' value={FormStatus.lastName} onChange={handleChange}   placeholder='dicription...' required/>
                 </div>
                
                
                 <div>
                 <button type='submit'>
-                    {update === 'add' ? 'create' : 'Update'}
+                    {update === 'add' ? <i class="fa-solid fa-plus"></i> : <i class="fa-regular fa-pen-to-square"></i>}
                 </button>
                 </div>
-              
-               
             </form>
         </div>
     );
