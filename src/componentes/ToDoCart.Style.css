@@ -10,7 +10,6 @@
 } 
 .datamain{
     width: 100%;
-    /* background-color: black; */
 }
  .ToDoCarditem{
     display: flex;
@@ -24,7 +23,7 @@
 
 .ToDoitem{
     display: flex;
-    /* background-color: darkblue; */
+ 
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
@@ -36,7 +35,7 @@
 
 .btmToDoitem {
     display: flex;
-  /* background-color: aqua; */
+
     width: 30%;
  
     justify-content: flex-end;
@@ -94,12 +93,9 @@
     .btmToDoitem{
         width: 100%;
         justify-content: space-around;
-        /* background-color: aqua; */
+       
     }
 
-    /* .ToDoCardTitel{
-        flex-direction: column;
-    } */
    .ToDoitem{
     justify-content: space-around;
    }
