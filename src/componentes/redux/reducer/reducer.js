@@ -1,10 +1,10 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = [
-    { id: 1, name: "book1", state: false, lastName: 'arocak naz' },
-    { id: 2, name: "book2", state: true, lastName: 'arocak naz' },
-    { id: 3, name: "book3", state: false, lastName: 'arocak naz' },
-    { id: 4, name: "book4", state: true, lastName: 'arocak naz' },
+    { id: 1, title: "book1",f: 'arocak naz' , state: false },
+    { id: 2, title: "book2",f: 'arocak naz' , state: true },
+    { id: 3, title: "book3",f: 'arocak naz' , state: false },
+    { id: 4, title: "book4",f: 'arocak naz' , state: true },
 ]
 export const CardSlice = createSlice({
     name: 'todo',
@@ -27,8 +27,14 @@ export const CardSlice = createSlice({
             state[index].state = !state[index].state
 
         },
+
+        checkTodo:(state,action)=>{
+            
+           const index=state.findIndex(item=>item.id===action.payload)
+           state[index].compeleted=!state[index].compeleted
+        },
     }
 });
 
-export const { addCard, deleteCard, updateCard , checkCard } = CardSlice.actions
+export const { addCard, deleteCard, updateCard , checkCard , checkTodo } = CardSlice.actions
 export default CardSlice.reducer

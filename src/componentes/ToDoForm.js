@@ -1,12 +1,21 @@
 import React from 'react';
-import {  useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addCard, updateCard } from './redux/reducer/reducer';
-import './ToDoForm.Style.css'
+import { Grid, Button } from '@mui/material';
+import TextField from '@mui/material/TextField';
+import BorderColorIcon from '@mui/icons-material/BorderColor'
+import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 
-
-const ToDoForm = ({ update, setUpdate ,FormStatus, setFormStatus }) => {
-    
+const ToDoForm = ({ update, setUpdate, FormStatus, setFormStatus, setStatus }) => {
     const dispatch = useDispatch()
+    const colors = [
+        {colorname: '#937DC2'}, { colorname: '#E61B23' }, { colorname: '#1A84EE'},  
+        { colorname: '#091D70'},{colorname: '#FA703F'},{ colorname: '#3F71F7' }     
+    ]
+    const handleColor = (colorName) => {
+        setFormStatus({ ...FormStatus, color: colorName })
+    }
+
     const handleChange = e => {
         setFormStatus({ ...FormStatus, [e.target.name]: e.target.value })
     }
@@ -14,33 +23,50 @@ const ToDoForm = ({ update, setUpdate ,FormStatus, setFormStatus }) => {
         event.preventDefault()
         if (update === 'add') {
             dispatch(addCard({ ...FormStatus, id: Math.floor(Math.random() * 1000) }))
-           
         } else {
             dispatch(updateCard(FormStatus))
         }
         setFormStatus({
             id: Math.floor(Math.random() * 1000),
-            name: '',
-            lastName: '',
+            f: '',
+            title: '',
         })
         setUpdate('add')
     }
     return (
-        <div className='containerForm'>
-            <form onSubmit={handleSubmit} className='Form'>
-                <div className='inputForm'>
-                    <input type="text" name='name' value={FormStatus.name} onChange={handleChange} placeholder='title...' required />
-                    <input type="text" name='lastName' value={FormStatus.lastName} onChange={handleChange}   placeholder='dicription...' required/>
-                </div>
-               
-               
-                <div>
-                <button type='submit'>
-                    {update === 'add' ? <i class="fa-solid fa-plus"></i> : <i class="fa-regular fa-pen-to-square"></i>}
-                </button>
-                </div>
+        <Grid container justifyContent={'center'} alignItems={'center'} dir={'rtl'}  >
+            <form onSubmit={handleSubmit}  >
+                <Grid container maxWidth={'600px'} spacing={3} p={2} >
+                    <Grid item xs={12} my={1} display={"flex"} justifyContent={'center'} alignItems={'center'}>
+                        <TextField name={'title'} value={FormStatus.title} onChange={handleChange} required sx={{
+                            width: '80%',
+                            '.css-1mt7n99-MuiInputBase-root-MuiOutlinedInput-root': { borderRadius: '16px' }
+                        }} label="موضوع" variant="outlined" />
+                    </Grid>
+                    <Grid item xs={12} my={1} display={"flex"} justifyContent={'center'} alignItems={'center'}>
+                        <TextField name={'f'} value={FormStatus.f} onChange={handleChange} required
+                            sx={{
+                                width: '80%',
+                                '.css-1mt7n99-MuiInputBase-root-MuiOutlinedInput-root': { borderRadius: '16px' }
+                            }}
+                            label="توضیحات" variant="outlined" />
+                    </Grid>
+                    <Grid xs={12} my={4} display={"flex"} justifyContent={'space-around'} alignItems={'center'}>
+                        {colors.map(color => (
+                            <Grid >
+                                <Grid style={{ width: "30px", height: '30px', borderRadius: '50%', background: color.colorname, border: FormStatus.color === color.colorname ? '1px solid #000' : 'unset' }} onClick={() => handleColor(color.colorname)} />
+                            </Grid>
+                        ))}
+                    </Grid>
+                    <Grid item xs={12} mt={2} mr={6}>
+                        <Button variant='contained' type='submit' xs={12} >
+                            {update === 'add' ?
+                                <AddOutlinedIcon /> : <BorderColorIcon />}
+                        </Button>
+                  </Grid>
+                </Grid>
             </form>
-        </div>
+        </Grid>
     );
 };
 
