@@ -37,13 +37,13 @@ const Delete = ({ todo }) => {
             >
                 <DialogContent>
                     <DialogContentText >
-                        Are you sure you want to delete it?
+                       {"آیا از حذف این آیتم مطمئن هستید ؟"}
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose}>no</Button>
+                    <Button onClick={handleClose}>{"خیر"}</Button>
                     <Button onClick={() => handledelete(todo.id)} autoFocus>
-                        yes
+                        {"بله "}
                     </Button>
                 </DialogActions>
             </Dialog>

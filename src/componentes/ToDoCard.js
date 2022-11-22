@@ -88,7 +88,7 @@ const ToDoCard = ({ setUpdate, setFormStatus }) => {
             placeholder="جستجوی عبارت مورد نظر ..."
           />
         </Grid>
-        <Grid container item flexDirection={"column"}>
+        <Grid container item flexDirection={"column"} >
           {DataTodos.map((todo) => (
             <Grid
               key={todo.id}
@@ -116,6 +116,7 @@ const ToDoCard = ({ setUpdate, setFormStatus }) => {
                       value="a"
                       name="radio-buttons"
                       onClick={() => handleCompeleted(todo.id)}
+                      color="default"
                     />
                   </Grid>
                   <Grid mr={2} flexWrap={"wrap"}>

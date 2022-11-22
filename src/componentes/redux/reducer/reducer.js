@@ -1,10 +1,10 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = [
-    { id: 1, title: "book1",f: 'arocak naz' , state: false },
-    { id: 2, title: "book2",f: 'arocak naz' , state: true },
-    { id: 3, title: "book3",f: 'arocak naz' , state: false },
-    { id: 4, title: "book4",f: 'arocak naz' , state: true },
+    // { id: 1, title: "book1",f: 'arocak naz' , state: false },
+    // { id: 2, title: "book2",f: 'arocak naz' , state: true },
+    // { id: 3, title: "book3",f: 'arocak naz' , state: false },
+    // { id: 4, title: "book4",f: 'arocak naz' , state: true },
 ]
 export const CardSlice = createSlice({
     name: 'todo',
