@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteCard, checkCard, checkTodo } from "./redux/reducer/reducer";
 import { Grid, Button, Typography } from "@mui/material";
-import ModeEditOutlineRoundedIcon from '@mui/icons-material/ModeEditOutlineRounded';
+import ModeEditOutlineRoundedIcon from "@mui/icons-material/ModeEditOutlineRounded";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
 import { Link } from "react-router-dom";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import IconButton from "@mui/material/IconButton";
 import Delete from "./Delete";
+import Radio from "@mui/material/Radio";
 import ControlPointRoundedIcon from "@mui/icons-material/ControlPointRounded";
 const ToDoCard = ({ setUpdate, setFormStatus }) => {
   const DataTodos = useSelector((state) => state.todo);
@@ -46,13 +47,13 @@ const ToDoCard = ({ setUpdate, setFormStatus }) => {
       <Grid container item dir={"rtl"} xs={12} md={8}>
         <Grid mt={5} dir={"rtl"} mr={2}>
           <Link to={`/Form`}>
-            <Button 
+            <Button
               sx={{
                 bgcolor: "primary.dark",
                 width: "150px",
                 color: "common.white",
                 borderRadius: 2,
-               
+
                 "&:hover": {
                   bgcolor: "common.white",
                   color: "primary.dark",
@@ -107,9 +108,13 @@ const ToDoCard = ({ setUpdate, setFormStatus }) => {
                   alignItems={"center"}
                 >
                   <Grid>
-                    <input
-                      type={"radio"}
+                 
+
+                    <Radio
                       checked={todo.compeleted}
+                      // onChange={handleChange}
+                      value="a"
+                      name="radio-buttons"
                       onClick={() => handleCompeleted(todo.id)}
                     />
                   </Grid>
@@ -133,7 +138,8 @@ const ToDoCard = ({ setUpdate, setFormStatus }) => {
                   <Button
                     variant="outline"
                     onClick={() => handleUpdate(todo)}
-                    sx={{ cursor: 'pointer' }}  color={"#FFF"}
+                    sx={{ cursor: "pointer" }}
+                    color={"#FFF"}
                   >
                     <ModeEditOutlineRoundedIcon />
                   </Button>
