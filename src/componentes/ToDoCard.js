@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteCard, checkCard, checkTodo } from "./redux/reducer/reducer";
 import { Grid, Button, Typography } from "@mui/material";
+import ModeEditOutlineRoundedIcon from '@mui/icons-material/ModeEditOutlineRounded';
 import BorderColorIcon from "@mui/icons-material/BorderColor";
 import { Link } from "react-router-dom";
 import InputBase from "@mui/material/InputBase";
@@ -132,10 +133,9 @@ const ToDoCard = ({ setUpdate, setFormStatus }) => {
                   <Button
                     variant="outline"
                     onClick={() => handleUpdate(todo)}
-                    sx={{ cursor: "pointer" }}
-                    color={"#FFF"}
+                    sx={{ cursor: 'pointer' }}  color={"#FFF"}
                   >
-                    <BorderColorIcon />
+                    <ModeEditOutlineRoundedIcon />
                   </Button>
                 </Link>
               </Grid>

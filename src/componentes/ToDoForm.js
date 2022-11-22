@@ -6,7 +6,7 @@ import TextField from "@mui/material/TextField";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import { Link, useNavigate } from "react-router-dom";
-
+import ModeEditOutlineRoundedIcon from '@mui/icons-material/ModeEditOutlineRounded';
 const ToDoForm = ({
   update,
   setUpdate,
@@ -99,7 +99,7 @@ const ToDoForm = ({
             />
           </Grid>
           <Grid mt={7}>
-            <Typography variant="h3">
+            <Typography >
               {"رنگ مورد نظر را برای کارت انتخاب کنید ..."}
             </Typography>
           </Grid>
@@ -140,7 +140,7 @@ const ToDoForm = ({
                             borderRadius: '12px'
                         }}
                                 disabled={!(FormStatus.title  && FormStatus.color && FormStatus.f)}>
-                {update === "add" ? <AddOutlinedIcon /> : <BorderColorIcon />}
+                {update === "add" ? <AddOutlinedIcon /> : <ModeEditOutlineRoundedIcon />}
               </Button>
             </Grid>
             {/* <Grid item  bgcolor={"gold"} justifyContent={"flex-start"}>
