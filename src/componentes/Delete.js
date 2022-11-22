@@ -28,7 +28,7 @@ const Delete = ({ todo }) => {
     }
     return (
         <>
-            <Button variant="outline" onClick={handleClickOpen} sx={{ cursor: 'pointer' }} >
+            <Button variant="outline" onClick={handleClickOpen} sx={{ cursor: 'pointer' }}  color={"#FFF"} >
                 <DeleteIcon />
             </Button>
             <Dialog

@@ -36,6 +36,7 @@ const ToDoCard = ({ setUpdate, setFormStatus }) => {
       container
       justifyContent={"center"}
       alignItems={"center"}
+      fontFamily={"dana"}
       sx={{
         boxShadow:
           "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
@@ -125,13 +126,14 @@ const ToDoCard = ({ setUpdate, setFormStatus }) => {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid sx={{ cursor: "pointer" }}>
+              <Grid sx={{ cursor: "pointer" }} color={"#FFF"}>
                 <Delete todo={todo} />
                 <Link to={"/Form"}>
                   <Button
                     variant="outline"
                     onClick={() => handleUpdate(todo)}
                     sx={{ cursor: "pointer" }}
+                    color={"#FFF"}
                   >
                     <BorderColorIcon />
                   </Button>

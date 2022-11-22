@@ -99,7 +99,7 @@ const ToDoForm = ({
             />
           </Grid>
           <Grid mt={7}>
-            <Typography>
+            <Typography fontFamily={"dana"}>
               {"رنگ مورد نظر را برای کارت انتخاب کنید ..."}
             </Typography>
           </Grid>

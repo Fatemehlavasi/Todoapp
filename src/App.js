@@ -11,6 +11,8 @@ import { Grid, Container } from "@mui/material";
 import ToDoCard from "./componentes/ToDoCard";
 import ToDoForm from "./componentes/ToDoForm";
 import { createBrowserRouter } from "react-router-dom";
+import {ThemeProvider} from "@mui/material";
+import theme from "./Theme/Theme";
 function App() {
   const [update, setUpdate] = useState("add");
   const [FormStatus, setFormStatus] = useState({
@@ -39,14 +41,19 @@ function App() {
   ]);
 
   return (
+    <ThemeProvider theme={theme}>
     <Grid mt={5}>
+
+    
       <Provider store={store}>
         <PersistGate persistor={persistor} />
         <Container>
           <RouterProvider router={router} />
         </Container>
       </Provider>
+     
     </Grid>
+    </ThemeProvider>
   );
 }
 
